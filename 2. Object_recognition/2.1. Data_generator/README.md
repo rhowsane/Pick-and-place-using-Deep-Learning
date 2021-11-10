@@ -1,7 +1,7 @@
 This directory contains the following tasks for each file/subdirectory:
 
 ## 1. Data: 
-It will contain 2 subdirectories (imgs_rot and labels_rot) which will receive 
+It contains 2 subdirectories (imgs_rot and labels_rot) which will receive 
 the files generated in Blender. And the display_annot.py, where you can check if the 
 bounding boxes are involving your objects correctly.
 
