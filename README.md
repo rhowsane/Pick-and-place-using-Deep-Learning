@@ -6,4 +6,5 @@ First, a simple pick-and-place simulation, with no automation involved, was test
 In  a  second  step,  it was  started  the  process  for  object recognition, ranging from the generation of synthetic data with the Blender software for training a pre-trained network with Yolov3 architecture to the analysis of the results obtained.  With the adoption of simplistic hypotheses such as camera at a fixed height, manipulation of the same set of objects, similar light intensity range both in the simulation environment and in the data generation environment. It is possible to detect the objects with reliability ranging from 0. 4 to 0.98, which can be sufficient under the conditions of the experiment.
 
 REFERENCES
+
 REDMON, J.; FARHADI, A. Yolov3: An incremental improvement. arXiv, 2018.
