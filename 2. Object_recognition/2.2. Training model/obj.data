@@ -1,0 +1,6 @@
+classes = 4
+train = data/train.txt
+valid = data/test.txt
+names = data/obj.names
+backup = /mydrive/Colab_Notebooks/Dados_treinamento/Test_1/yolov3/backup
+
