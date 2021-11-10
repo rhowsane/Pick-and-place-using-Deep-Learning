@@ -1,4 +1,4 @@
-This directory has the following tasks for each file/subdirectory:
+This directory contains the following tasks for each file/subdirectory:
 
 ## 1. Data: 
 It will contain 2 subdirectories (imgs_rot and labels_rot) which will receive 
