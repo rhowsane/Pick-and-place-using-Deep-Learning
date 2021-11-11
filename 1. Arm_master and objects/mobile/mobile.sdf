@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="mobile">
+   <pose>0 0 0 0 0 0</pose>
+   <!-- center of mass 7.399642 3.500453 0.505221-->
+   <link name="mobile_link">
+     <pose>0 0.025 0.005 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0000384754028</ixx>
+          <ixy>0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001747939209</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0002116997314</izz>
+        </inertia>
+      </inertial>
+      <collision name="mobile_collision">
+        <pose>-0.07399642 -0.03500453 -0.005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/rhosane/.gazebo/models/mobile/meshes/mobile.stl</uri>
+            <scale>0.01 0.01 0.01</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>500</mu2>
+
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.000000</kp>
+              <kd>10.00000</kd>
+              <max_vel>2.000000</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="mobile_visual">
+        <pose>-0.07399642 -0.03500453 -0.005 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>/home/rhosane/.gazebo/models/mobile/meshes/mobile.stl</uri>
+            <scale>0.01 0.01 0.01</scale>
+          </mesh>
+        </geometry>
+        <material>
+           <!--<script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Turquoise</name>
+           </script>-->
+           <ambient>80 220 100 1</ambient>
+           <diffuse>80 220 100 1</diffuse>
+           <specular>0 0 0 1</specular>
+           <emissive>0.1 0.1 0.1 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

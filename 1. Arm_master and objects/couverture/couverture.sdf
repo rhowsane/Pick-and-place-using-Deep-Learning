@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='couverture'>
+    <link name='couverture'>
+      <pose frame=''>0 0 0.057 0 3.140187 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.0285 0 0 0</pose>
+        <mass>0.01142950</mass>
+        <inertia>
+          <ixx>0.00001277250366</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00003290099121</iyy>
+          <iyz>0</iyz>
+          <izz>0.00003967267822</izz>
+        </inertia>
+      </inertial>
+      <collision name='couverture_collision'>
+        <pose frame=''>0 0 0.0285 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.17200001 0.087 0.057</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1000</mu>
+              <mu2>500</mu2>
+              <fdir1>0 0 1</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.000000</kp>
+              <kd>10.00000</kd>
+              <max_vel>2.000000</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='couverture_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>/home/rhosane/.gazebo/models/couverture/meshes/couverture.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <!--<script>Gazebo/Green</script>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>-->
+          <ambient>0.9 0.09 0.09 1</ambient>
+          <diffuse>0.9 0.09 0.09 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0.1 0.1 0.1 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

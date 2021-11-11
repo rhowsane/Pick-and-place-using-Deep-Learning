@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="my_mesh">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <uri>model://Mobile</uri>
+    </include>
+  </world>
+</sdf>

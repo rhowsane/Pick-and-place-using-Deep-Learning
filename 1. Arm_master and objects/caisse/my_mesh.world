@@ -1,0 +1,350 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="my_mesh">
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <light name='sun2' type="point">
+        <pose frame=''>0 0 10 0 -0 0</pose>
+    </light>
+    <include>
+      <model name='ground_plane'>
+        <uri>model://ground_plane</uri>
+      </model>
+    </include>
+    <!--<include>
+	    <model name='ground_plane'>
+	      <static>1</static>
+	      <link name='link'>
+		<collision name='collision'>
+		  <geometry>
+		    <plane>
+		      <normal>0 0 1</normal>
+		      <size>100 100</size>
+		    </plane>
+		  </geometry>
+		  <surface>
+		    <friction>
+		      <ode>
+		        <mu>100</mu>
+		        <mu2>50</mu2>
+		      </ode>
+		      <torsional>
+		        <ode/>
+		      </torsional>
+		    </friction>
+		    <contact>
+		      <ode/>
+		    </contact>
+		    <bounce/>
+		  </surface>
+		  <max_contacts>10</max_contacts>
+		</collision>
+		<visual name='visual'>
+		  <cast_shadows>0</cast_shadows>
+		  <geometry>
+		    <plane>
+		      <normal>0 0 1</normal>
+		      <size>100 100</size>
+		    </plane>
+		  </geometry>
+		  <material>
+		    <script>
+		      <uri>/usr/share/gazebo-9/media/materials/scripts/gazebo.material</uri>
+		      <name>Gazebo/Grey</name>
+		    </script>
+		  </material>
+		</visual>
+		<self_collide>0</self_collide>
+		<kinematic>0</kinematic>
+		<gravity>1</gravity>
+	      </link>
+	    </model>
+    </include> -->
+
+
+<!--    <include>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <uri>model://caisse/meshes/caisse.stl</uri>
+    </include>
+    <include>
+        <pose frame=''>0.5 0 0 0 0 0</pose>
+        <uri>/home/rhosane/.gazebo/models/couverture/meshes/couverture.stl</uri>
+    </include>
+    <include>
+        <pose frame=''>0 0.5 0 0 0 0</pose>
+        <uri>/home/rhosane/.gazebo/models/mobile/meshes/mobile.stl</uri>
+    </include>
+  </world> -->
+
+
+    <include>
+          <uri>model://caisse</uri> 
+	  <model name="caisse">
+	   <pose>0 0 0 0 0 0</pose>   
+	   <link name="caisse_link">
+	   <!-- center of mass 16.500000 8.200000 5.500000-->
+	   <!-- Mesh Volume is 78.575951
+		Center of Mass is 0.000000 0.000000 1.902955-->
+	     <pose>0 0 0 0 -0 0</pose>
+	      <inertial>
+		<pose>0 0 0 0 -0 0</pose>
+		<mass>0.01</mass>
+		<inertia>
+		  <ixx>0.0001050106934</ixx>
+		  <ixy>0</ixy>
+		  <ixz>0</ixz>
+		  <iyy>0.0002760795166</iyy>
+		  <iyz>-0</iyz>
+		  <izz>0.0003301207520</izz>
+		</inertia>
+	      </inertial>
+	      <collision name="caisse_collision">
+		<pose frame=''>0 0 0 0 0 0</pose>
+		<geometry>
+		  <box>
+		    <size>0.165 0.082 0.055</size>
+		  </box>
+		</geometry>
+		<surface>
+		  <friction>
+		    <ode>
+		      <mu>1000</mu>
+		      <mu2>500</mu2>
+		      <fdir1>0 0 1</fdir1>
+		      <slip1>0.0</slip1>
+		      <slip2>0.0</slip2>
+		    </ode>
+		  </friction>
+		  <contact>
+		    <ode>
+		      <kp>100000.000000</kp>
+		      <kd>10.00000</kd>
+		      <max_vel>2.000000</max_vel>
+		      <min_depth>0.0001</min_depth>
+		    </ode>
+		  </contact>
+		</surface>
+	      </collision>
+	      <visual name="caisse_visual">
+		<pose>0 0 0 0 0 0</pose>
+		<geometry>
+		  <mesh>
+		    <uri>/home/rhosane/.gazebo/models/caisse/meshes/caisse.stl</uri>
+		    <scale>0.01 0.01 0.01</scale>
+		  </mesh>
+		</geometry>
+		<material>
+		   <script>
+		      <uri>/usr/share/gazebo-9/media/materials/scripts/gazebo.material</uri>
+		      <name>Gazebo/WoodFloor</name>
+		   </script>
+		</material>
+	      </visual>
+	    </link>
+          </model>
+    </include>
+
+    <include>
+          <uri>model://chargeur</uri>
+	  <model name='chargeur'>
+	    <link name='chargeur'>
+	      <pose frame=''>0 0 0 0 -0 0</pose>
+	      <inertial>
+		<pose frame=''>0 -0 0 0 -0 0</pose>
+		<mass>0.01</mass>
+		<inertia>
+		  <ixx>0.0017</ixx>
+		  <ixy>0</ixy>
+		  <ixz>0</ixz>
+		  <iyy>0.0017</iyy>
+		  <iyz>0</iyz>
+		  <izz>0.0017</izz>
+		</inertia>
+	      </inertial>
+	      <collision name='chargeur_collision'>
+		<pose frame=''>0 0 0 1.5708 -0 0</pose>
+		<geometry>
+		  <box>
+		    <size>0.192 0.062 0.086</size>
+		  </box>
+		</geometry>
+		<surface>
+		  <friction>
+		    <ode>
+		      <mu>1000</mu>
+		      <mu2>500</mu2>
+		      <fdir1>0 0 1</fdir1>
+		      <slip1>0.0</slip1>
+		      <slip2>0.0</slip2>
+		    </ode>
+		  </friction>
+		  <contact>
+		    <ode>
+		      <kp>100000.000000</kp>
+		      <kd>10.00000</kd>
+		      <max_vel>2.000000</max_vel>
+		      <min_depth>0.0001</min_depth>
+		    </ode>
+		  </contact>
+		</surface>
+	      </collision>
+	      <visual name='chargeur_visual'>
+		<pose frame=''>0 0 0 1.5708 -0 0</pose>
+		<geometry>
+		  <mesh>
+		    <scale>0.01 0.01 0.01</scale>
+		    <uri>/home/rhosane/.gazebo/models/chargeur/meshes/chargeur.stl</uri>
+		  </mesh>
+		</geometry>
+		<material>  
+		   <script>
+		      <uri>/usr/share/gazebo-9/media/materials/scripts/gazebo.material</uri>
+		      <name>Gazebo/White</name>
+		   </script>
+		</material>
+	      </visual>
+	    </link>
+	  </model>
+    </include>
+
+    <include>
+          <uri>model://couverture</uri>
+	  <model name='couverture'>
+	    <link name='couverture'>
+	      <pose frame=''>0 0 1.958523 0 0 0</pose>
+	      <inertial>
+		<pose frame=''>0 0 0 1.958523 0 0</pose>
+		<mass>0.0258084114</mass>
+		<inertia>
+		  <ixx>0.1277250366</ixx>
+		  <ixy>0</ixy>
+		  <ixz>0</ixz>
+		  <iyy>0.3290099121</iyy>
+		  <iyz>0</iyz>
+		  <izz>0.3967267822</izz>
+		</inertia>
+	      </inertial>
+	      <collision name='couverture_collision'>
+		<pose frame=''>0 0 0 0 0 0</pose>
+		<geometry>
+		  <box>
+		    <size>0.17200001 0.087 0.057</size>
+		  </box>
+		</geometry>
+		<surface>
+		  <friction>
+		    <ode>
+		      <mu>1000</mu>
+		      <mu2>500</mu2>
+		      <fdir1>0 0 1</fdir1>
+		      <slip1>0.0</slip1>
+		      <slip2>0.0</slip2>
+		    </ode>
+		  </friction>
+		  <contact>
+		    <ode>
+		      <kp>100000.000000</kp>
+		      <kd>10.00000</kd>
+		      <max_vel>2.000000</max_vel>
+		      <min_depth>0.0001</min_depth>
+		    </ode>
+		  </contact>
+		</surface>
+	      </collision>
+	      <visual name='couverture_visual'>
+		<pose frame=''>0 0 0 1.5708 -0 0</pose>
+		<geometry>
+		  <mesh>
+		    <scale>0.01 0.01 0.01</scale>
+		    <uri>/home/rhosane/.gazebo/models/couverture/meshes/couverture.stl</uri>
+		  </mesh>
+		</geometry>
+		<material>
+		 <script>
+		  <uri>/usr/share/gazebo-9/media/materials/scripts/gazebo.material</uri>
+		  <name>Gazebo/White</name>
+	 	 </script>
+		</material>
+	      </visual>
+	    </link>
+	  </model>
+    </include>
+
+    <include>
+          <uri>model://mobile</uri>
+	  <model name="mobile">
+	   <pose>0 0 0 0 0 0</pose>
+	   <!-- center of mass 7.399642 3.500453 0.505221-->
+	   <link name="mobile_link">
+	     <pose>0 0 0 0 -0 0</pose>
+	      <inertial>
+		<pose>0 -0 0 0 -0 0</pose>
+		<mass>0.0170</mass>
+		<inertia>
+		  <ixx>0.0384754028</ixx>
+		  <ixy>-0.0000122884</ixy>
+		  <ixz>0.000000041</ixz>
+		  <iyy>0.1747939209</iyy>
+		  <iyz>0.000000011</iyz>
+		  <izz>0.2116997314</izz>
+		</inertia>
+	      </inertial>
+	      <collision name="mobile_collision">
+		<pose frame=''>0 0 0 0 -0 0</pose>
+		<geometry>
+		  <box>
+		    <size>0.148 0.070 0.010</size>
+		  </box>
+		</geometry>
+		<surface>
+		  <friction>
+		    <ode>
+		      <mu>1000</mu>
+		      <mu2>500</mu2>
+
+		      <fdir1>0 0 1</fdir1>
+		      <slip1>0.0</slip1>
+		      <slip2>0.0</slip2>
+		    </ode>
+		  </friction>
+		  <contact>
+		    <ode>
+		      <kp>100000.000000</kp>
+		      <kd>10.00000</kd>
+		      <max_vel>2.000000</max_vel>
+		      <min_depth>0.0001</min_depth>
+		    </ode>
+		  </contact>
+		</surface>
+	      </collision>
+	      <visual name="mobile_visual">
+		<pose>-0.007399642 -0.003500453 -0.000505221 0 -0 0</pose>
+		<geometry>
+		  <mesh>
+		    <uri>/home/rhosane/.gazebo/models/mobile/meshes/mobile.stl</uri>
+		    <scale>0.01 0.01 0.01</scale>
+		  </mesh>
+		</geometry>
+		<material>
+		   <script>
+		      <uri>/usr/share/gazebo-9/media/materials/scripts/gazebo.material</uri>
+		      <name>Gazebo/Wood</name>
+		   </script>
+		</material>
+	      </visual>
+	    </link>
+	  </model>
+    </include>
+  </world>
+</sdf>
