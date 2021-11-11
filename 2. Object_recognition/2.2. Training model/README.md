@@ -11,3 +11,9 @@ from 1 to n.
 
 ## 3. yolov3_custom.cfg
 It is the configuration file necessary to the the yolov3 training.
+
+
+## 4. For the Training:
+You can use the collab below as model to train your data and obtain a Loss vs iteration graph:
+
+https://colab.research.google.com/drive/16OHPS1bnKd9SMhM7vZVmsDcyIA0A4tr9?usp=sharing
